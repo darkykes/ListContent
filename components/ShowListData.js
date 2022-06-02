@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import myData from '../data/users.json'
+import myData from '../data/users.json';
 
 
 const columns = [
@@ -67,7 +67,8 @@ export default function ShowListData({searchTerm,setSearchTerm}) {
               })
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id}> 
+                  {/* fix an key error on line 70 */}
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
