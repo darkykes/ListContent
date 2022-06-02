@@ -8,7 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import myData from '../data/users.json';
-
+import { useState , useContext} from 'react';
+import { dataContext } from '../pages';
 
 const columns = [
   { id: 'id', label: 'ID', minWidth: 170 },
@@ -23,9 +24,10 @@ const columns = [
 
 const rows = myData;
 
-export default function ShowListData({searchTerm,setSearchTerm}) {
+export default function ShowListData() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const {searchTerm} = useContext(dataContext);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -39,7 +41,8 @@ export default function ShowListData({searchTerm,setSearchTerm}) {
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       {/* <SearchBar onChange={Event => {setSearchTerm(Event.target.value)}}/> */}
       {/* <SearchBar onChange={(e , newValue) => setSearchTerm(newValue)}/> */}
-      <input type="text" placeholder='Search...' onChange={event => {setSearchTerm(event.target.value)}}/>
+      {/* <input type="text" placeholder='Search...' onChange={event => {setSearchTerm(event.target.value)}}/> */}
+      {/* Separate search-bar and show list of data from each another*/}
       <TableContainer sx={{ maxHeight: 640 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
