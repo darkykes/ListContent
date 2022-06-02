@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/darkykes/ListContent.git",
   "name": "listcontent",
   "version": "0.1.0",
   "private": true,
@@ -6,15 +7,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.7.1",
+    "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/icons-material": "^5.8.2",
+    "@mui/material": "^5.8.2",
+    "@mui/x-data-grid": "^5.12.0",
+    "algoliasearch": "^4.13.1",
     "next": "12.1.6",
+    "prop-types": "^15.8.1",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-instantsearch-dom": "^6.26.0"
   },
   "devDependencies": {
     "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "gh-pages": "^4.0.0"
   }
 }
